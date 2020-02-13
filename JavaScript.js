@@ -26,3 +26,7 @@ ehBissexto = ano => {
       return false;
     }
   }
+
+// Sort alfabético
+const myData = this.state.lista
+ .sort((a, b) => a.nome.localeCompare(b.nome))
