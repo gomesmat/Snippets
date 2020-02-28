@@ -30,3 +30,14 @@ ehBissexto = ano => {
 // Sort alfabético
 const myData = this.state.lista
  .sort((a, b) => a.nome.localeCompare(b.nome))
+
+
+// Se email já existe
+emailCadastrado = (e) => { // e = string email
+  if (all.find( ({email}) => email === e ) === undefined){
+    return false;
+  } else {
+    console.log(`Email \'${e}\' já cadastrado.`);
+    return true;
+  }
+}
