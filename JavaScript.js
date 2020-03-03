@@ -27,20 +27,41 @@ ehBissexto = ano => {
     }
   }
 
+
 // Sort alfabético
-const myData = this.state.lista
+let ordenado = minhaLista
  .sort((a, b) => a.nome.localeCompare(b.nome))
+
+
+// Sort numérico
+let ordenado = minhaLista
+	.sort(function (a, b) { // duas instâncias do objeto da lista
+		let a1 = -1; // valor negativo: esquerda aparece antes
+		let b1 =  1; // valor positivo: direita aparece antes
+		let igual = 0; // zero: objetos iguais
+		if (a.numero < b.numero) {
+			return a1;
+		}
+		else if (b.numero < a.numero) {
+			return b1;
+		}
+		else {
+			return igual;
+		}
+	}
+);
 
 
 // Se email já existe
 emailCadastrado = (e) => { // e = string email
-  if (all.find( ({email}) => email === e ) === undefined){
+  if (minhaLista.find( ({email}) => email === e ) === undefined){
     return false;
   } else {
     console.log(`Email \'${e}\' já cadastrado.`);
     return true;
   }
 }
+
 
 // Converte ISO para Date
 isoDate = date => {
@@ -51,3 +72,6 @@ isoDate = date => {
   hora = hora.split(':');
   return new Date(dia[0], dia[1] - 1, dia[2], hora[0] - 3, hora[1], hora[2].slice(0,2));
 }
+
+
+//
