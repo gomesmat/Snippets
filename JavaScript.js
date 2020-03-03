@@ -41,3 +41,13 @@ emailCadastrado = (e) => { // e = string email
     return true;
   }
 }
+
+// Converte ISO para Date
+isoDate = date => {
+  let a = date.split('T');
+  let dia = a[0];
+  let hora = a[1]
+  dia = dia.split('-');
+  hora = hora.split(':');
+  return new Date(dia[0], dia[1] - 1, dia[2], hora[0] - 3, hora[1], hora[2].slice(0,2));
+}
