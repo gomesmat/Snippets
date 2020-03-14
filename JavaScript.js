@@ -74,4 +74,11 @@ isoDate = date => {
 }
 
 
-//
+// Retorna maior data de um array de objetos DATE
+let getMaiorData = lista => {
+  let maior = lista[0];
+  for (let datai of lista) {
+    if (datai > maior) maior = datai;
+  }
+  return maior;
+}
