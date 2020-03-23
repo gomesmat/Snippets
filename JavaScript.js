@@ -1,3 +1,10 @@
+// Capitalizar texto
+capitaliza = (s, o) => {
+    if (o === 1) { // capitaliza toda a frase
+        return s.toUpperCase();
+    } else return s.charAt(0).toUpperCase() + s.slice(1);
+};
+
 // Se objeto é vazio
 objVazio = o => {
     if (Object.entries(o).length === 0 && o.constructor === Object) return true;
