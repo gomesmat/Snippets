@@ -73,6 +73,17 @@ isoDate = date => {
   return new Date(dia[0], dia[1] - 1, dia[2], hora[0] - 3, hora[1], hora[2].slice(0,2));
 }
 
+diasRestantes = (prazo, hoje = new Date()) => {
+  prazo = isoDate(prazo) // necessário caso 'prazo' seja ISOString
+  let mil = Math.abs(prazo - hoje)
+  let horas = mil/1000/60/60
+  let dias = mil/1000/60/60/24
+  if ( dias < 1) {
+	return Math.round(horas) + " horas"
+  } else {
+	return Math.round(dias) + " dias"
+  }
+}
 
 // Retorna maior data de um array de objetos DATE ou Date ISO
 let getMaiorData = lista => {
