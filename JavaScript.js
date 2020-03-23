@@ -63,10 +63,7 @@ let ordenado = minhaLista
 emailCadastrado = (e) => { // e = string email
   if (minhaLista.find( ({email}) => email === e ) === undefined){
     return false;
-  } else {
-    console.log(`Email \'${e}\' já cadastrado.`);
-    return true;
-  }
+  } else return true;
 }
 
 
