@@ -5,6 +5,13 @@ capitaliza = (s, o) => {
     } else return s.charAt(0).toUpperCase() + s.slice(1);
 };
 
+
+// Gera numero aleatório entre mínimo e máximo, ambos inclusos
+aleatorio = (min = 0, max = 100) => {
+    return Math.floor(Math.random() * (max - min + 1) ) + min; // para máx excluso, tirar o "-1"
+}
+
+
 // Se objeto é vazio
 objVazio = o => {
     if (Object.entries(o).length === 0 && o.constructor === Object) return true;
